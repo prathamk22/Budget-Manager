@@ -1,0 +1,262 @@
+body{
+    position: relative;
+}
+
+#main-container{
+    position: relative;
+    background-image: url('back.png');
+    background-position: center;
+    background-attachment: scroll;
+    margin: auto;
+    text-align: center;
+    padding: 1em;
+    display: block;
+}
+
+#month-container{
+    position: relative;
+    font-size: 1.5em;
+    color: white;
+    font-family:sans-serif;
+}
+
+#price-total{
+    position: relative;
+    font-size: 3em;
+    color: white;
+    font-family:sans-serif;
+    z-index: 1;
+    display: block;
+    cursor: default;
+    margin-top: .2em;
+}
+
+#income-container{
+    position: relative;
+    display: block;
+    font-size: 1em;
+    font-family:sans-serif;
+    color: black;
+    border-radius: 20px;
+    background-color:rgb(27, 165, 165);
+    padding: 1%;
+    transition: letter-spacing .2s;
+}
+
+
+#income-container:hover{
+    cursor: default;
+    letter-spacing: 1px;
+    font-weight: 200;
+}
+
+#price-income-total{
+    position: relative;
+    color: white;
+    margin-left: 10%;
+}
+
+#expense-container{
+    position: relative;
+    display: block;
+    font-size: 1em;
+    font-family:sans-serif;
+    color: black;
+    background-color:rgb(255, 68, 68);
+    border-radius: 20px;
+    padding: 1%;
+    transition: letter-spacing .2s;
+}
+
+#expense-container:hover{
+    cursor: default;
+    letter-spacing: 1px;
+    font-weight: 200;
+}
+
+#price-expense-total{
+    position: relative;
+    color: white;
+    margin-left: 10%;
+}
+
+#expense-percent{
+    margin-right: -35px;
+    padding:5px;
+    background-color: rgba(252, 120, 120, 0.527);
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.589);
+}
+
+#add-value-container{
+    position: relative;
+    display: block;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin: auto;
+    background-color: #f3f3f3;
+    text-align: center;
+    box-shadow: 2px 2px 20px rgb(194, 194, 194);
+}
+
+#option-container{
+    position: relative;
+    border: none;
+}
+
+select {
+    text-decoration: none;
+    background: #dbdbdb;
+    color: #000;
+    border: none;
+    padding: 5px;
+    border-radius: 2px;
+    outline: 0px;
+}
+
+input{
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    margin-left: 10px;
+    font-size: 1em;
+}
+
+button{
+    outline: 0px;
+    border: none;
+    background-color: #2bae66ff;
+    color: white;
+    font-size: 1em;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+    transition: letter-spacing .3s;
+}
+
+button:active{
+    letter-spacing: 1.5px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+#list-container{
+    margin: auto;
+    text-align: center;
+    background-color: #fff;
+    padding-top: 40px;
+}
+
+#income-list-container{
+    color:rgb(27, 165, 165);
+    font-family: sans-serif;
+    cursor: default;
+}
+
+#expense-list-container{
+    position: relative;
+    color: rgb(255, 68, 68);
+    font-family: sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+    cursor: default;
+}
+
+#money-name-container{
+    transition: border .3s;
+}
+
+#money-name-container:focus{
+    outline: 0px;
+    border: 1px solid rgb(27, 165, 165);
+}
+
+#money-value-container{
+    transition: border .3s;
+}
+
+#money-value-container:focus{
+    outline: 0px;
+    border: 1px solid rgb(255, 68, 68);;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+  
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+ul{
+    list-style-type: none;
+    margin:auto;
+    text-align: left;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+li{
+    color: #000;
+    border: 2px #000;
+    padding: 6px;
+    border-top: 1px groove #c7c7c7;
+    border-radius: 2px;
+    font-family: sans-serif;
+    font-size: 1em;
+    display: block;
+}
+
+#line-text{
+    text-decoration: line-through;
+}
+
+#new-li{
+    color: #000;
+    border: 2px #000;
+    padding: 6px;
+    border-top: 1px groove #c7c7c7;
+    border-radius: 2px;
+    font-family: sans-serif;
+    font-size: 1em;
+    display: block;
+    background-color: #e2e2e281;
+    border-radius: 5px;
+}
+
+#price-income{
+    color: rgb(27, 165, 165);
+    float: right;
+    margin: auto;
+}
+
+#price-expense{
+    color: rgb(255, 68, 68);
+    float: right;
+    margin: auto;
+}
+
+.clear{
+    color: rgba(255, 0, 0, 0.459);
+    cursor: pointer;
+    font-weight: 500;
+    float: right;
+    margin: auto;
+    padding-left: 5px;
+    transition: color .2s;
+}
+
+.clear:hover{
+    color: red;
+}

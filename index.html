@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="style.css">
+        <title>Budgety</title>
+    </head>
+    <body>
+        <div id="main-container">
+            <span id="month-container">Available Budget in <span id="month">October 2019</span></span></br>
+            <span id="price-total">-0.00</span></br>
+            <span id="income-container">
+                INCOME <span id="price-income-total">+0.00</span> 
+            </span></br>
+            <span id="expense-container">
+                    EXPENSE <span id="price-expense-total">+0.00</span> <span id="expense-percent">0%</span> 
+            </span>
+        </div>
+        <div id="add-value-container">
+            <span id="option-container">
+                <select id="select-option">
+                    <option value="add">+</option>
+                    <option value="sub">-</option>
+                </select>
+            </span>
+            <span id="money-name">
+                <input type="text" placeholder="Add Description" name="name" id="money-name-container">
+            </span>
+            <span id="money-value">
+                <input type="number" placeholder="Value" name="value" id="money-value-container">
+            </span>
+            <span id="done-btn">
+                    <button id="btnn" onclick="makeit()">Submit</button>
+            </span>
+        </div>
+        <div id="list-container">
+            <div class="row">
+                <div class="column">
+                    <span id="income-list-container">
+                        INCOME        
+                        <ul id="income-ul">
+                            
+                        </ul>
+                    </span>
+                </div>
+                <div class="column" >
+                    <span id="expense-list-container">
+                        EXPENSE
+                        <ul id="expense-ul">
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
