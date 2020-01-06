@@ -1,5 +1,7 @@
 body{
     position: relative;
+    margin: 0px;
+    padding: 0px;
 }
 
 #main-container{
