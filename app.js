@@ -81,30 +81,43 @@ function makeit(){
     clearbtn = document.getElementById("clear");
 }
 
-function makeList(option, name,value    ){
+function makeList(option, name,value, tick){
     var list = document.createElement("li");
     var span = document.createElement("span");
     var clear = document.createElement("span");
+    var checkbox = document.createElement("input");
+    checkbox.checked = tick
+    checkbox.type = "checkbox";
+    checkbox.onclick = onTick;
     clear.className = "clear";
     var clearNode = document.createTextNode("Clear");
     clear.appendChild(clearNode);
     clear.onclick = abcd;
     var priceNode,nameNode;
     nameNode = document.createTextNode(name);
+    if(tick){
+        list.style.textDecoration = "line-through";
+    }
     if(option=="income"){
-        income_value += Number(value);
+        if(!tick){
+            income_value += Number(value);
+        }
         span.id = "price-income";
         priceNode = document.createTextNode("+ " + value);
         span.appendChild(priceNode);
+        list.appendChild(checkbox);
         list.appendChild(nameNode);
         list.appendChild(clear);
         list.appendChild(span);
         income_ul.appendChild(list);
     }else{
-        expense_value += Number(value);
+        if(!tick){
+            expense_value += Number(value);
+        }
         span.id = "price-expense";
         priceNode = document.createTextNode("- " + value);
         span.appendChild(priceNode);
+        list.appendChild(checkbox);
         list.appendChild(nameNode);
         list.appendChild(clear);
         list.appendChild(span);
@@ -148,9 +161,7 @@ function makeid(length) {
 
 function abcd(){
     var parent = this.parentElement.innerHTML;
-    var keys = parent.substr(0, parent.indexOf('<span'));
-    var len = keys.substr(keys.indexOf('>')+1,keys.length);
-    console.log(parent);
+    var keys = parent.substr(parent.indexOf('ox">') + 4, parent.indexOf('<span class="clear"') - 23);
     for(var i=0; i<localStorage.length; i++){
         var key = localStorage.key(i);
         if(localStorage!=null){
@@ -177,15 +188,14 @@ function abcd(){
             var name = JSONvalue.name;
             var option = JSONvalue.option;
             var tick = JSONvalue.tick;
-            makeList(option,name,value);
+            makeList(option,name,value,tick);
         }
     }
  }
 
  function onTick(){
     var parent = this.parentElement.innerHTML;
-    var keys = parent.substr(0, parent.indexOf('<span'));
-    var len = keys.substr(keys.indexOf('>')+1,keys.length);
+    var keys = parent.substr(parent.indexOf('ox">') + 4, parent.indexOf('<span class="clear"') - 23);
     for(var i=0; i<localStorage.length; i++){
         var key = localStorage.key(i);
         if(localStorage!=null){
@@ -194,10 +204,11 @@ function abcd(){
             var value = JSONvalue.value;
             var name = JSONvalue.name;
             var option = JSONvalue.option;
-            if(len==name){
+            var tick = JSONvalue.tick
+            if(keys==name){
                 localStorage.removeItem(key);
-                sendToLocalStorage(option,name,value,true);
-                location.reload;
+                sendToLocalStorage(option,name,value,!tick);
+                location.reload();
             }
         }
     }
