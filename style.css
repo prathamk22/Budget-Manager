@@ -1,5 +1,7 @@
 body{
     position: relative;
+    margin: 0px;
+    padding: 0px;
 }
 
 #main-container{
@@ -36,7 +38,7 @@ body{
     display: block;
     font-size: 1em;
     font-family:sans-serif;
-    color: black;
+    color: white;
     border-radius: 20px;
     background-color:rgb(27, 165, 165);
     padding: 1%;
@@ -61,7 +63,7 @@ body{
     display: block;
     font-size: 1em;
     font-family:sans-serif;
-    color: black;
+    color: white;
     background-color:rgb(255, 68, 68);
     border-radius: 20px;
     padding: 1%;
